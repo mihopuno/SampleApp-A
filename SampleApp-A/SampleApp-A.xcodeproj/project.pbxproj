@@ -24,6 +24,14 @@
 		7A9F4ECE254180B100A7722D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F4ECD254180B100A7722D /* UIView+Extensions.swift */; };
 		7A9F4ED32541915300A7722D /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F4ED22541915300A7722D /* FieldView.swift */; };
 		7A9F4ED82541947200A7722D /* SessionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F4ED72541947200A7722D /* SessionHandler.swift */; };
+		7AC1FF962541E1F00088A9B3 /* DashListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC1FF952541E1F00088A9B3 /* DashListViewController.swift */; };
+		7AC1FF9F2541E20D0088A9B3 /* RewardDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC1FF9E2541E20D0088A9B3 /* RewardDetailsViewController.swift */; };
+		7AC1FFA82541E3400088A9B3 /* RewardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC1FFA62541E3400088A9B3 /* RewardViewCell.swift */; };
+		7AC1FFA92541E3400088A9B3 /* RewardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AC1FFA72541E3400088A9B3 /* RewardViewCell.xib */; };
+		7AC1FFAE2541E4220088A9B3 /* DashEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC1FFAD2541E4220088A9B3 /* DashEntities.swift */; };
+		7AC1FFB32541E6300088A9B3 /* RegisterEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC1FFB22541E6300088A9B3 /* RegisterEntities.swift */; };
+		7AC1FFBB2541E7200088A9B3 /* AppGenericProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC1FFBA2541E7200088A9B3 /* AppGenericProtocols.swift */; };
+		7AC1FFC62541E8AE0088A9B3 /* LoginEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC1FFC52541E8AE0088A9B3 /* LoginEntities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +75,14 @@
 		7A9F4ECD254180B100A7722D /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		7A9F4ED22541915300A7722D /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		7A9F4ED72541947200A7722D /* SessionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHandler.swift; sourceTree = "<group>"; };
+		7AC1FF952541E1F00088A9B3 /* DashListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashListViewController.swift; sourceTree = "<group>"; };
+		7AC1FF9E2541E20D0088A9B3 /* RewardDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardDetailsViewController.swift; sourceTree = "<group>"; };
+		7AC1FFA62541E3400088A9B3 /* RewardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewCell.swift; sourceTree = "<group>"; };
+		7AC1FFA72541E3400088A9B3 /* RewardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardViewCell.xib; sourceTree = "<group>"; };
+		7AC1FFAD2541E4220088A9B3 /* DashEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashEntities.swift; sourceTree = "<group>"; };
+		7AC1FFB22541E6300088A9B3 /* RegisterEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEntities.swift; sourceTree = "<group>"; };
+		7AC1FFBA2541E7200088A9B3 /* AppGenericProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGenericProtocols.swift; sourceTree = "<group>"; };
+		7AC1FFC52541E8AE0088A9B3 /* LoginEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				7A9F4EBE25417F9800A7722D /* Dash.storyboard */,
+				7AC1FF942541E1D20088A9B3 /* List */,
+				7AC1FF9D2541E1F80088A9B3 /* Reward Details */,
 			);
 			path = Dash;
 			sourceTree = "<group>";
@@ -186,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				7A9F4ED72541947200A7722D /* SessionHandler.swift */,
+				7AC1FFBA2541E7200088A9B3 /* AppGenericProtocols.swift */,
 				7A9F4EAB25417D7300A7722D /* Extensions */,
 			);
 			path = Utilities;
@@ -206,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				7A9F4E68254171DB00A7722D /* LoginViewController.swift */,
+				7AC1FFC52541E8AE0088A9B3 /* LoginEntities.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -213,6 +233,7 @@
 		7A9F4EBC25417F2400A7722D /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				7AC1FFB22541E6300088A9B3 /* RegisterEntities.swift */,
 				7A9F4EC825417FEB00A7722D /* UserRegisterViewController.swift */,
 				7A9F4ED22541915300A7722D /* FieldView.swift */,
 			);
@@ -225,6 +246,25 @@
 				7A9F4EC325417FC100A7722D /* WelcomeViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		7AC1FF942541E1D20088A9B3 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				7AC1FFAD2541E4220088A9B3 /* DashEntities.swift */,
+				7AC1FF952541E1F00088A9B3 /* DashListViewController.swift */,
+				7AC1FFA62541E3400088A9B3 /* RewardViewCell.swift */,
+				7AC1FFA72541E3400088A9B3 /* RewardViewCell.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		7AC1FF9D2541E1F80088A9B3 /* Reward Details */ = {
+			isa = PBXGroup;
+			children = (
+				7AC1FF9E2541E20D0088A9B3 /* RewardDetailsViewController.swift */,
+			);
+			path = "Reward Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AC1FFA92541E3400088A9B3 /* RewardViewCell.xib in Resources */,
 				7A9F4E71254171E200A7722D /* LaunchScreen.storyboard in Resources */,
 				7A9F4E6E254171E200A7722D /* Assets.xcassets in Resources */,
 				7A9F4EBF25417F9800A7722D /* Dash.storyboard in Resources */,
@@ -359,13 +400,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A9F4EB725417E9300A7722D /* UIStoryboard+Extensions.swift in Sources */,
+				7AC1FFA82541E3400088A9B3 /* RewardViewCell.swift in Sources */,
 				7A9F4EB225417D9B00A7722D /* UITableView+Extensions.swift in Sources */,
+				7AC1FF962541E1F00088A9B3 /* DashListViewController.swift in Sources */,
 				7A9F4EAD25417D8900A7722D /* UIViewController+Extensions.swift in Sources */,
 				7A9F4ECE254180B100A7722D /* UIView+Extensions.swift in Sources */,
 				7A9F4E69254171DB00A7722D /* LoginViewController.swift in Sources */,
 				7A9F4EC925417FEB00A7722D /* UserRegisterViewController.swift in Sources */,
 				7A9F4E65254171DB00A7722D /* AppDelegate.swift in Sources */,
+				7AC1FFAE2541E4220088A9B3 /* DashEntities.swift in Sources */,
 				7A9F4ED82541947200A7722D /* SessionHandler.swift in Sources */,
+				7AC1FFB32541E6300088A9B3 /* RegisterEntities.swift in Sources */,
+				7AC1FF9F2541E20D0088A9B3 /* RewardDetailsViewController.swift in Sources */,
+				7AC1FFBB2541E7200088A9B3 /* AppGenericProtocols.swift in Sources */,
+				7AC1FFC62541E8AE0088A9B3 /* LoginEntities.swift in Sources */,
 				7A9F4E67254171DB00A7722D /* SceneDelegate.swift in Sources */,
 				7A9F4EC425417FC100A7722D /* WelcomeViewController.swift in Sources */,
 				7A9F4ED32541915300A7722D /* FieldView.swift in Sources */,
