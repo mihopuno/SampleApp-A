@@ -31,3 +31,15 @@ extension UIViewController {
     
     var className : String { return String(describing: self.self) }
 }
+
+
+extension UIViewController {
+    func showAlertView(_ title: String?, _ message: String?) {
+        let alertController = UIAlertController(title: title,
+                                                message: title,
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
