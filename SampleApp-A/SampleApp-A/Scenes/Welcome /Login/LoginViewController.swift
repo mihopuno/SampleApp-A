@@ -14,6 +14,10 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var showMPINButton: UIButton!
     @IBOutlet private weak var mpinTextField: UITextField!
     @IBOutlet private weak var mobileNumberTextField: UITextField!
+    @IBOutlet private weak var buttonsBottomConstraints: NSLayoutConstraint!
+    private lazy var viewModel : LoginViewModel = { ()
+        return LoginViewModel()
+    }()
     
     class func view() -> UIViewController {
         let viewController = LoginViewController.instantiate(fromStoryboard: .Welcome)
@@ -24,6 +28,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
        
         configureViews()
+        setupNotificationObservers()
     }
     
     private func configureViews() {
@@ -36,19 +41,59 @@ class LoginViewController: UIViewController {
         mobileNumberTextField.delegate = self
         mobileNumberTextField.returnKeyType = .done
     }
+    
+    private func setupNotificationObservers() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardNotification(notification:)),
+            name: UIResponder.keyboardWillChangeFrameNotification,
+            object: nil)
+    }
+    
+    @objc private func keyboardNotification(notification: Notification) {
+        guard let userInfo = notification.userInfo,
+            let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        let endFrameY = endFrame.origin.y
+        let keyboardAnimationDuration = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+        let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+        let animationCurve: UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+        if endFrameY >= UIScreen.main.bounds.size.height {
+            self.buttonsBottomConstraints.constant = 20
+        } else {
+            self.buttonsBottomConstraints.constant = (endFrame.size.height - view.safeAreaInsets.bottom) + 8
+        }
+        UIView.animate(withDuration: keyboardAnimationDuration,
+                       delay: TimeInterval(0),
+                       options: animationCurve,
+                       animations: { if let view = self.view { view.layoutIfNeeded() } },
+                       completion: nil)
+    }
 
     @IBAction private func onTappedBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction private func onTappedLoginButton(_ sender: Any) {
-        let mpin = mpinTextField
-        let mobileNumber = mobileNumberTextField
+        let mpin = mpinTextField.text ?? ""
+        let mobileNumber = mobileNumberTextField.text ?? ""
+        guard viewModel.isInputCredentialValid(mobileNumber, mpin) else {
+            self.showAlertView("Error", "Invalid password or mobile number.")
+            return
+        }
+        let dashViewController = DashListViewController.view()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        guard let window = appDelegate.window else {
+            return
+        }
+        window.rootViewController = dashViewController
+        window.makeKeyAndVisible()
     }
     
     @IBAction private func onTappedShowMPINButton(_ sender: Any) {
         mpinTextField.isSecureTextEntry = !mpinTextField.isSecureTextEntry
         let showTitle = mpinTextField.isSecureTextEntry ? "SHOW" : "HIDE"
+        showMPINButton.setTitle(showTitle, for: .normal)
     }
 }
 

@@ -12,7 +12,7 @@
         <!--Dash List View Controller-->
         <scene sceneID="5NB-53-dTY">
             <objects>
-                <viewController id="tqc-CD-0gq" customClass="DashListViewController" customModule="SampleApp_A" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashListViewController" id="tqc-CD-0gq" customClass="DashListViewController" customModule="SampleApp_A" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jeh-Su-ogk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,7 +89,7 @@
         <!--Reward Details View Controller-->
         <scene sceneID="DRQ-JE-sJZ">
             <objects>
-                <viewController id="DC2-Aq-Er6" customClass="RewardDetailsViewController" customModule="SampleApp_A" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RewardDetailsViewController" id="DC2-Aq-Er6" customClass="RewardDetailsViewController" customModule="SampleApp_A" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9yq-CK-Ajw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,7 +148,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGo-dt-GIp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-297.10144927536237" y="97.767857142857139"/>
+            <point key="canvasLocation" x="-117" y="104"/>
         </scene>
     </scenes>
     <resources>

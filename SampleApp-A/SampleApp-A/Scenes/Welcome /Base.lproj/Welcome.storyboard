@@ -493,6 +493,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="JUD-ip-y8P" id="psA-En-pgs"/>
+                        <outlet property="buttonsBottomConstraints" destination="98j-Je-OKt" id="DqZ-97-Na1"/>
                         <outlet property="loginButton" destination="SQg-Yp-DYV" id="kqD-1E-183"/>
                         <outlet property="mobileNumberTextField" destination="8R0-m5-xSO" id="BCJ-wW-Uzm"/>
                         <outlet property="mpinTextField" destination="vDJ-Nr-YdL" id="ed1-3S-Moj"/>

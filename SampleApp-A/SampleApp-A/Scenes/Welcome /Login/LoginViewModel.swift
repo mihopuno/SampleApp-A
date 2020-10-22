@@ -12,7 +12,8 @@ class LoginViewModel {
     init() { }
     
     func isInputCredentialValid(_ mobile: String, _ password: String) -> Bool {
-        
-        return true
+        let passwordIsValid = password.count == 4
+        let mobileIsValid = mobile.isPhone()
+        return passwordIsValid && mobileIsValid
     }
 }

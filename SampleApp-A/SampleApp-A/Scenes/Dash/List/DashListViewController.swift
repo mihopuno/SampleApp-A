@@ -14,6 +14,11 @@ class DashListViewController: UIViewController {
     @IBOutlet weak var referalCodeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    class func view() -> UIViewController {
+        let viewController = DashListViewController.instantiate(fromStoryboard: .Dash)
+        return viewController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
