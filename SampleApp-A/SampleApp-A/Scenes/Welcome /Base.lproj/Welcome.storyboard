@@ -74,7 +74,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qbt-Tk-gr4">
-                                <rect key="frame" x="0.0" y="126" width="414" height="662"/>
+                                <rect key="frame" x="0.0" y="126" width="414" height="654"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLm-PR-X59">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="640"/>
@@ -98,7 +98,7 @@
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8K-Pg-r7d">
                                                                 <rect key="frame" x="16" y="72" width="382" height="50"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -118,8 +118,8 @@
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="errorLabel" destination="r8K-Pg-r7d" id="QKv-4y-ek5"/>
-                                                            <outlet property="fieldFextField" destination="MtM-eh-p6v" id="9Pf-HX-qUs"/>
                                                             <outlet property="fieldLabel" destination="jxg-TH-7SY" id="ob1-zE-zts"/>
+                                                            <outlet property="textField" destination="MtM-eh-p6v" id="4G2-4U-Ooa"/>
                                                         </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h1y-2Z-go0" userLabel="Last Name" customClass="FieldView" customModule="SampleApp_A" customModuleProvider="target">
@@ -138,7 +138,7 @@
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smT-Lb-NN7">
                                                                 <rect key="frame" x="16" y="72" width="382" height="50"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -158,8 +158,8 @@
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="errorLabel" destination="smT-Lb-NN7" id="5L6-hJ-YxV"/>
-                                                            <outlet property="fieldFextField" destination="5cg-zk-kHo" id="daL-l2-Tkv"/>
                                                             <outlet property="fieldLabel" destination="1lL-9f-g4v" id="H1c-6S-Zsa"/>
+                                                            <outlet property="textField" destination="5cg-zk-kHo" id="Pq1-Hc-0PK"/>
                                                         </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDf-WZ-bbu" userLabel="Mobile Number" customClass="FieldView" customModule="SampleApp_A" customModuleProvider="target">
@@ -178,7 +178,7 @@
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHQ-Y9-ftc">
                                                                 <rect key="frame" x="16" y="72" width="382" height="50"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -198,8 +198,8 @@
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="errorLabel" destination="XHQ-Y9-ftc" id="8xF-l0-U23"/>
-                                                            <outlet property="fieldFextField" destination="wMw-Xf-hl4" id="xPV-BM-z03"/>
                                                             <outlet property="fieldLabel" destination="v7n-v9-Fes" id="oDW-Oz-oZM"/>
+                                                            <outlet property="textField" destination="wMw-Xf-hl4" id="OSD-Pn-0r9"/>
                                                         </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rTE-Bj-1Mj" userLabel="MPIN" customClass="FieldView" customModule="SampleApp_A" customModuleProvider="target">
@@ -218,7 +218,7 @@
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdA-1H-Zof">
                                                                 <rect key="frame" x="16" y="72" width="382" height="50"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -238,8 +238,8 @@
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="errorLabel" destination="WdA-1H-Zof" id="CJT-EI-wXg"/>
-                                                            <outlet property="fieldFextField" destination="OIZ-xo-ch6" id="yLn-Qi-oQr"/>
                                                             <outlet property="fieldLabel" destination="3qT-RS-64h" id="65e-kc-Bsi"/>
+                                                            <outlet property="textField" destination="OIZ-xo-ch6" id="yaq-2r-r5i"/>
                                                         </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYM-vf-hRQ" userLabel="Confirm Pin" customClass="FieldView" customModule="SampleApp_A" customModuleProvider="target">
@@ -258,7 +258,7 @@
                                                             </textField>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i7H-sF-ZAD">
                                                                 <rect key="frame" x="16" y="72" width="382" height="50"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                 <color key="textColor" systemColor="systemRedColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -278,8 +278,8 @@
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="errorLabel" destination="i7H-sF-ZAD" id="fk0-RY-GvV"/>
-                                                            <outlet property="fieldFextField" destination="14e-fS-Z0X" id="IRx-rD-mqS"/>
                                                             <outlet property="fieldLabel" destination="UPA-U1-6MJ" id="OOJ-ra-1Ky"/>
+                                                            <outlet property="textField" destination="14e-fS-Z0X" id="IpC-Xo-jT5"/>
                                                         </connections>
                                                     </view>
                                                 </subviews>
@@ -340,7 +340,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tMc-NI-xCP" firstAttribute="bottom" secondItem="Inw-pJ-pV4" secondAttribute="bottom" constant="16" id="B0d-pR-Ncz"/>
-                            <constraint firstItem="Inw-pJ-pV4" firstAttribute="top" secondItem="qbt-Tk-gr4" secondAttribute="bottom" id="CVc-xy-pGe"/>
+                            <constraint firstItem="Inw-pJ-pV4" firstAttribute="top" secondItem="qbt-Tk-gr4" secondAttribute="bottom" constant="8" id="CVc-xy-pGe"/>
                             <constraint firstItem="tMc-NI-xCP" firstAttribute="trailing" secondItem="Inw-pJ-pV4" secondAttribute="trailing" constant="16" id="Fl5-7w-Urt"/>
                             <constraint firstItem="Inw-pJ-pV4" firstAttribute="leading" secondItem="tMc-NI-xCP" secondAttribute="leading" constant="16" id="VWV-E9-GD9"/>
                             <constraint firstItem="tMc-NI-xCP" firstAttribute="trailing" secondItem="qMz-vK-aoC" secondAttribute="trailing" constant="16" id="WoQ-oU-bYj"/>
@@ -354,6 +354,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="o4V-Cp-AD0" id="Y3x-Y0-HE1"/>
+                        <outlet property="buttonsBottomConstraints" destination="B0d-pR-Ncz" id="NMC-mG-bBQ"/>
                         <outlet property="confirmMpinField" destination="oYM-vf-hRQ" id="W6V-TR-ajd"/>
                         <outlet property="firstNameField" destination="66J-AW-vL1" id="W3R-fL-Dwj"/>
                         <outlet property="lastNameField" destination="h1y-2Z-go0" id="u4z-3q-Ifd"/>

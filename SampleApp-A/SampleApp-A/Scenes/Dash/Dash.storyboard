@@ -39,7 +39,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="1" green="0.91273279976388755" blue="0.94605149412053435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="pFp-ME-4RB" secondAttribute="bottom" constant="16" id="8dM-AD-np3"/>
                                     <constraint firstAttribute="trailing" secondItem="pFp-ME-4RB" secondAttribute="trailing" constant="16" id="Fbd-gY-ham"/>
@@ -56,6 +56,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZhM-hp-Cde">
                                 <rect key="frame" x="0.0" y="161" width="414" height="701"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="tqc-CD-0gq" id="b4s-1H-N4M"/>
+                                    <outlet property="delegate" destination="tqc-CD-0gq" id="eS0-SJ-kjE"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KHf-Xz-qhB"/>
@@ -122,6 +126,11 @@
                             <constraint firstItem="dCd-pS-lkM" firstAttribute="leading" secondItem="Kms-Qi-4Lu" secondAttribute="leading" constant="20" id="z5C-Qa-ic5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="rewardDescriptionLabel" destination="ypi-vn-XTg" id="adI-jX-XdY"/>
+                        <outlet property="rewardImageView" destination="1Mw-QL-TAL" id="XLL-MJ-Bln"/>
+                        <outlet property="rewardLabel" destination="dCd-pS-lkM" id="Ken-bb-zQC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bfC-F5-RBS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

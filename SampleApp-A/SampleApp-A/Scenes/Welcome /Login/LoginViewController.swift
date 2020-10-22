@@ -22,7 +22,19 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
+        configureViews()
+    }
+    
+    private func configureViews() {
+        backButton.addCornerRadius(5)
+        loginButton.addCornerRadius(5)
+        mpinTextField.delegate = self
+        mpinTextField.returnKeyType = .next
+        mpinTextField.keyboardType = .numberPad
+        mobileNumberTextField.keyboardType = .namePhonePad
+        mobileNumberTextField.delegate = self
+        mobileNumberTextField.returnKeyType = .done
     }
 
     @IBAction private func onTappedBackButton(_ sender: Any) {
@@ -40,3 +52,17 @@ class LoginViewController: UIViewController {
     }
 }
 
+extension LoginViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case mpinTextField:
+            textField.resignFirstResponder()
+            break
+        case mobileNumberTextField:
+            mpinTextField.becomeFirstResponder()
+            break
+        default: break
+        }
+        return true
+    }
+}

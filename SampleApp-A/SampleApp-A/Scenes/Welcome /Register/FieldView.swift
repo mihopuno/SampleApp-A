@@ -11,20 +11,16 @@ import UIKit
 class FieldView : UIView {
     
     @IBOutlet private weak var fieldLabel: UILabel!
-    @IBOutlet private weak var fieldFextField: UITextField!
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet private weak var errorLabel: UILabel!
     
     func setup(_ hint: String, _ title: String) {
         fieldLabel.text = title
-        fieldFextField.placeholder = hint
+        textField.placeholder = hint
     }
     
-    func fieldInvalid(_ message: String) {
-        errorLabel.text = message
-    }
-    
-    func fieldValid() {
-        errorLabel.text = nil
+    func fieldErrorMessage(_ errorMessage: String?) {
+        errorLabel.text = errorMessage ?? nil
     }
     
     override class func awakeFromNib() {

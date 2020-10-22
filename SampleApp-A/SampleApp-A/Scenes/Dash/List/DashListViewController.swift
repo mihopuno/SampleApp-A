@@ -28,7 +28,7 @@ extension DashListViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : RewardViewCell = tableView.dequeueReusableCell(withIdentifier: "RewardViewCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RewardViewCell", for: indexPath) as! RewardViewCell
         return cell
     }
 }

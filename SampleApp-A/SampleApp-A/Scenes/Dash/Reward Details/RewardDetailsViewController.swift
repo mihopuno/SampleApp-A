@@ -9,10 +9,13 @@ import UIKit
 
 class RewardDetailsViewController: UIViewController {
 
+    @IBOutlet private weak var rewardImageView: UIImageView!
+    @IBOutlet private weak var rewardLabel: UILabel!
+    @IBOutlet private weak var rewardDescriptionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 

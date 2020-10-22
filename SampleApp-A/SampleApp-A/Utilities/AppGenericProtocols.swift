@@ -8,6 +8,6 @@
 import Foundation
 
 protocol NetworkResponse {
-    var status : Int
-    var message : String
+    var status : Int { get set }
+    var message : String { get set }
 }
