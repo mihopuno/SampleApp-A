@@ -11,7 +11,8 @@ extension UIStoryboard {
     
     enum Storyboard: String {
         
-        case Login
+        case Welcome
+        case Dash
 
         var instance: UIStoryboard {
             return UIStoryboard(name: self.rawValue, bundle: Bundle.main)

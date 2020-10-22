@@ -9,6 +9,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    class func view() -> UIViewController {
+        let viewController = LoginViewController.instantiate(fromStoryboard: .Welcome)
+        return viewController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
