@@ -2,29 +2,29 @@
 //  RewardViewCell.swift
 //  SampleApp-A
 //
-//  Created by Mac Mini 2 on 10/22/20.
+//  Created by Mac Mini 2 on 10/23/20.
 //
 
 import UIKit
 
-class RewardViewCell: UITableViewCell {
+class RewardViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var rewardsImageView: UIImageView!
-    @IBOutlet weak var rewardLabel: UILabel!
+    @IBOutlet private weak var rewardImageView: UIImageView!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var viewContainer: UIView!
     
-    func configure() {
-        
+    func configure(_ description: String, _ path: String) {
+        descriptionLabel.text = description
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+     
+        viewContainer.addCornerRadius(5)
+        viewContainer.elevate(elevation: 3)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
 }

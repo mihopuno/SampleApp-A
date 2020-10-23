@@ -12,7 +12,7 @@ class DashListViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var mobileNumberLabel: UILabel!
     @IBOutlet weak var referalCodeLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     class func view() -> UIViewController {
         let viewController = DashListViewController.instantiate(fromStoryboard: .Dash)
@@ -22,18 +22,22 @@ class DashListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configureViews()
+    }
+    
+    private func configureViews() {
+        collectionView.register(nib: RewardViewCell.self)
     }
 }
 
-extension DashListViewController : UITableViewDataSource {
+extension DashListViewController : UICollectionViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RewardViewCell", for: indexPath) as! RewardViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RewardViewCell", for: indexPath) as! RewardViewCell
         return cell
     }
 }

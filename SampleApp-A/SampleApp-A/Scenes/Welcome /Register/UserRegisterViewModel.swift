@@ -39,8 +39,13 @@ class UserRegisterViewModel {
     }
     
     func validateMobileNumber(_ method : (_ errorMessage: String?)->(), _ number : String) {
+        guard number.trimmingCharacters(in: .whitespacesAndNewlines) != "" else {
+            isMobileNumberValid = false
+            method("Mobile number is required")
+            return
+        }
         let isValid = number.isPhone()
-        method(isValid ? nil : "Mobile number is required")
+        method(isValid ? nil : "Mobile number is invalid format")
         isMobileNumberValid = isValid
     }
     

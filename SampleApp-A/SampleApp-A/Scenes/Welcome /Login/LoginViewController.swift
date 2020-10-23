@@ -110,4 +110,18 @@ extension LoginViewController : UITextFieldDelegate {
         }
         return true
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        switch textField {
+        case mpinTextField:
+            let count = textField.text?.count ?? 0
+            if count >= 4 && string != "" {
+                return false
+            } else {
+                return true
+            }
+        default:
+            return true
+        }
+    }
 }

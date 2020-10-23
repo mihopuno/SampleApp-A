@@ -7,14 +7,6 @@
 
 import Foundation
 
-class DataArray<T : Codable> : Codable {
-    let list: [T]
-}
-
-class DataObject<T : Codable> : Codable {
-    let user : T
-}
-
 class Rewards : Codable, NetworkResponse {
 
     var status : Int

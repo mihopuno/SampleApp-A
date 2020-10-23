@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,32 +54,48 @@
                                     <constraint firstItem="nsL-Z5-fvj" firstAttribute="top" secondItem="Fj1-L4-5P1" secondAttribute="top" constant="20" id="zqg-9P-362"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZhM-hp-Cde">
-                                <rect key="frame" x="0.0" y="161" width="414" height="701"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DeI-9X-aEg">
+                                <rect key="frame" x="8" y="169" width="398" height="685"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nJx-Rc-bF2">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nxk-Fq-F92">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Hgy-uO-k1y">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="tqc-CD-0gq" id="b4s-1H-N4M"/>
-                                    <outlet property="delegate" destination="tqc-CD-0gq" id="eS0-SJ-kjE"/>
+                                    <outlet property="dataSource" destination="tqc-CD-0gq" id="YTC-pz-f88"/>
+                                    <outlet property="delegate" destination="tqc-CD-0gq" id="Uhz-WU-S7J"/>
                                 </connections>
-                            </tableView>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KHf-Xz-qhB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZhM-hp-Cde" firstAttribute="top" secondItem="Fj1-L4-5P1" secondAttribute="bottom" id="HAQ-Gj-lDr"/>
+                            <constraint firstItem="KHf-Xz-qhB" firstAttribute="bottom" secondItem="DeI-9X-aEg" secondAttribute="bottom" constant="8" id="32i-we-YOi"/>
+                            <constraint firstItem="DeI-9X-aEg" firstAttribute="leading" secondItem="KHf-Xz-qhB" secondAttribute="leading" constant="8" id="5kC-fe-2Jz"/>
                             <constraint firstItem="KHf-Xz-qhB" firstAttribute="trailing" secondItem="Fj1-L4-5P1" secondAttribute="trailing" id="IOf-jV-ExP"/>
-                            <constraint firstItem="KHf-Xz-qhB" firstAttribute="bottom" secondItem="ZhM-hp-Cde" secondAttribute="bottom" id="Qrg-hx-Y1J"/>
-                            <constraint firstItem="ZhM-hp-Cde" firstAttribute="leading" secondItem="KHf-Xz-qhB" secondAttribute="leading" id="WcO-0V-cLn"/>
                             <constraint firstItem="Fj1-L4-5P1" firstAttribute="leading" secondItem="KHf-Xz-qhB" secondAttribute="leading" id="c2V-ns-YFR"/>
-                            <constraint firstItem="KHf-Xz-qhB" firstAttribute="trailing" secondItem="ZhM-hp-Cde" secondAttribute="trailing" id="wsN-hd-Xb1"/>
+                            <constraint firstItem="KHf-Xz-qhB" firstAttribute="trailing" secondItem="DeI-9X-aEg" secondAttribute="trailing" constant="8" id="maN-1p-Yke"/>
+                            <constraint firstItem="DeI-9X-aEg" firstAttribute="top" secondItem="Fj1-L4-5P1" secondAttribute="bottom" constant="8" id="mrg-Rx-qYm"/>
                             <constraint firstItem="Fj1-L4-5P1" firstAttribute="top" secondItem="KHf-Xz-qhB" secondAttribute="top" id="wvG-uN-Vjh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5pi-f6-xhd"/>
                     <connections>
+                        <outlet property="collectionView" destination="DeI-9X-aEg" id="Nha-r6-DxH"/>
                         <outlet property="mobileNumberLabel" destination="KXy-xR-MUh" id="c6r-xn-xBv"/>
                         <outlet property="referalCodeLabel" destination="pFp-ME-4RB" id="2Ey-ON-XLP"/>
-                        <outlet property="tableView" destination="ZhM-hp-Cde" id="zaE-EM-l71"/>
                         <outlet property="userNameLabel" destination="nsL-Z5-fvj" id="XPc-CN-0LP"/>
                     </connections>
                 </viewController>
