@@ -9,11 +9,33 @@ import Foundation
 
 class LoginViewModel {
     
-    init() { }
+    private var delegate : LoginViewDelegate?
     
-    func isInputCredentialValid(_ mobile: String, _ password: String) -> Bool {
+    init(_ delegate: LoginViewDelegate) {
+        self.delegate = delegate
+    }
+    
+    func userLoginAndValidate(_ mobile: String, _ password: String) {
         let passwordIsValid = password.count == 4
         let mobileIsValid = mobile.isPhone()
-        return passwordIsValid && mobileIsValid
+        let valid = passwordIsValid && mobileIsValid
+        if valid {
+            loginUser(UserLogin(mobile, password))
+        } else {
+            delegate?.onLoginCredentialsInvalid("Invalid mobile number or MPIN code")
+        }
+    }
+    
+    func loginUser(_ login: UserLogin) {
+        NetworkRequest.shared.request(type: APIRoutes.Welcome.userLogin(login)) { (result) in
+            switch result {
+            case .success(_):
+                self.delegate?.onLoginRequestSuccess()
+                break
+            case .failure(let error):
+                self.delegate?.onLoginRequestFailed(error)
+                break
+            }
+        }
     }
 }

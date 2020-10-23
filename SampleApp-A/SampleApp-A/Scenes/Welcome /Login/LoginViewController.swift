@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol LoginViewDelegate : class {
+    func onLoginCredentialsInvalid(_ message: String)
+    func onLoginRequestSuccess()
+    func onLoginRequestFailed(_ error: ErrorModel)
+}
+
 class LoginViewController: UIViewController {
 
     @IBOutlet private weak var backButton: UIButton!
@@ -16,7 +22,7 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var mobileNumberTextField: UITextField!
     @IBOutlet private weak var buttonsBottomConstraints: NSLayoutConstraint!
     private lazy var viewModel : LoginViewModel = { ()
-        return LoginViewModel()
+        return LoginViewModel(self)
     }()
     
     class func view() -> UIViewController {
@@ -77,10 +83,26 @@ class LoginViewController: UIViewController {
     @IBAction private func onTappedLoginButton(_ sender: Any) {
         let mpin = mpinTextField.text ?? ""
         let mobileNumber = mobileNumberTextField.text ?? ""
-        guard viewModel.isInputCredentialValid(mobileNumber, mpin) else {
-            self.showAlertView("Error", "Invalid password or mobile number.")
-            return
-        }
+        viewModel.userLoginAndValidate(mobileNumber, mpin)
+    }
+    
+    @IBAction private func onTappedShowMPINButton(_ sender: Any) {
+        mpinTextField.isSecureTextEntry = !mpinTextField.isSecureTextEntry
+        let showTitle = mpinTextField.isSecureTextEntry ? "SHOW" : "HIDE"
+        showMPINButton.setTitle(showTitle, for: .normal)
+    }
+}
+
+extension LoginViewController : LoginViewDelegate {
+    func onLoginRequestFailed(_ error: ErrorModel) {
+        self.showNetworkError(error)
+    }
+    
+    func onLoginCredentialsInvalid(_ message: String) {
+        self.showAlertView("Error", message)
+    }
+    
+    func onLoginRequestSuccess() {
         let dashViewController = DashListViewController.view()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         guard let window = appDelegate.window else {
@@ -88,12 +110,6 @@ class LoginViewController: UIViewController {
         }
         window.rootViewController = dashViewController
         window.makeKeyAndVisible()
-    }
-    
-    @IBAction private func onTappedShowMPINButton(_ sender: Any) {
-        mpinTextField.isSecureTextEntry = !mpinTextField.isSecureTextEntry
-        let showTitle = mpinTextField.isSecureTextEntry ? "SHOW" : "HIDE"
-        showMPINButton.setTitle(showTitle, for: .normal)
     }
 }
 

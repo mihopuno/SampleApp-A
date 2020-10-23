@@ -15,6 +15,11 @@ class UserLogin {
         self.mobile = mobile
         self.mpin = mpin
     }
+    
+    func toParamaters() -> Parameters {
+        let parameters = Parameters()
+        return parameters
+    }
 }
 
 class LoginModel : Codable, NetworkResponse {

@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol UserRegisterView : class {
+    func onUserRegistrationSuccess()
+    func onUserRegistrationFailed(_ error: ErrorModel)
+}
+
 class UserRegisterViewController: UIViewController {
 
     @IBOutlet private weak var firstNameField: FieldView!
@@ -18,7 +23,7 @@ class UserRegisterViewController: UIViewController {
     @IBOutlet private weak var registerButton: UIButton!
     @IBOutlet private weak var buttonsBottomConstraints: NSLayoutConstraint!
     private lazy var viewModel : UserRegisterViewModel = { ()
-        return UserRegisterViewModel()
+        return UserRegisterViewModel(self)
     }()
     
     class func view() -> UIViewController {
@@ -103,14 +108,22 @@ class UserRegisterViewController: UIViewController {
                                confirmMpinField.fieldErrorMessage(_:),
                                mpin, cmpin)
         
-        guard viewModel.isDataInputValid else {
-            return
-        }
-        
-        self.showAlertView("Success", "Your registration is complete.")
+        guard viewModel.isDataInputValid else { return }
+        viewModel.registerAccount(firstName, lastName, mpin, mobile)
     }
 }
 
+extension UserRegisterViewController : UserRegisterView {
+    func onUserRegistrationSuccess() {
+        self.showAlertView("Success", "Your registration is complete.") { (_) in
+            self.onTappedBackButton(self.backButton as Any)
+        }
+    }
+    
+    func onUserRegistrationFailed(_ error: ErrorModel) {
+        self.showNetworkError(error, handler: nil)
+    }
+}
 
 extension UserRegisterViewController : UITextFieldDelegate {
     

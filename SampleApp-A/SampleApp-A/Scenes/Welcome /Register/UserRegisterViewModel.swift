@@ -13,16 +13,18 @@ class UserRegisterViewModel {
     private var isLastNameValid : Bool
     private var isMobileNumberValid : Bool
     private var isMPINValid : Bool
+    private var delegate: UserRegisterView?
     
     var isDataInputValid : Bool {
         return isFirstNameValid && isLastNameValid && isMobileNumberValid && isMPINValid
     }
     
-    init() {
+    init(_ delegate: UserRegisterView) {
         isFirstNameValid = false
         isLastNameValid = false
         isMobileNumberValid = false
         isMPINValid = false
+        self.delegate = delegate
     }
     
     
@@ -57,5 +59,19 @@ class UserRegisterViewModel {
         methodMPIN(errorMessage)
         methodCMPIN(errorMessage)
         isMPINValid = isValid
+    }
+    
+    func registerAccount(_ firstName: String, _ lastName: String, _ mpin: String, _ mobile: String) {
+        let model = UserRegistration(firstName, lastName, mobile, mpin)
+        NetworkRequest.shared.request(type: APIRoutes.Welcome.userRegister(model)) { (result) in
+            switch result {
+            case .success(_):
+                self.delegate?.onUserRegistrationSuccess()
+                break
+            case .failure(let errorModel):
+                self.delegate?.onUserRegistrationFailed(errorModel)
+                break
+            }
+        }
     }
 }

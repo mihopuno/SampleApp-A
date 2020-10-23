@@ -12,12 +12,14 @@ struct AppEndpoint<T> {
     var headers: HTTPHeaders?
     var timeout: TimeInterval = 10
     var httpBody: Data?
+    var paramaters : Parameters?
     
     var url: URL?
     var resourcePath : String = ""
     
     init(resourcePath: String,
          httpMethod: HTTPMethod,
+         paramaters : Parameters? = nil,
          timeout: TimeInterval = 10) {
         self.resourcePath = resourcePath
         self.url = URL(string: "https://run.mocky.io" + resourcePath)
@@ -27,6 +29,7 @@ struct AppEndpoint<T> {
     
     init(urlString: String,
          httpMethod: HTTPMethod,
+         paramaters : Parameters? = nil,
          timeout: TimeInterval = 10) {
         self.url = URL(string: urlString)
         self.httpMethod = httpMethod

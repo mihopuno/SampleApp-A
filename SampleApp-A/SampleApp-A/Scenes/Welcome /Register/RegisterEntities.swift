@@ -19,6 +19,15 @@ class UserRegistration {
         self.mobile = mobile
         self.mpin = mpin
     }
+    
+    func toParameters() -> Parameters {
+        var param = Parameters()
+        param["first_name"] = firstName
+        param["last_name"] = lastName
+        param["mobile"] = mobile
+        param["mpin"] = mpin
+        return param
+    }
 }
 
 class RegisterModel : Codable, NetworkResponse {

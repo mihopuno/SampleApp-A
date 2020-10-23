@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A41F463254270B100E2D301 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A41F462254270B100E2D301 /* NetworkRequest.swift */; };
 		7A41F46B2542710D00E2D301 /* AppEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A41F46A2542710D00E2D301 /* AppEndpoint.swift */; };
-		7A41F4732542715F00E2D301 /* AppAPIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A41F4722542715F00E2D301 /* AppAPIRoutes.swift */; };
+		7A41F4732542715F00E2D301 /* APIRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A41F4722542715F00E2D301 /* APIRoutes.swift */; };
 		7A41F479254274F500E2D301 /* RewardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A41F477254274F500E2D301 /* RewardViewCell.swift */; };
 		7A41F47A254274F500E2D301 /* RewardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A41F478254274F500E2D301 /* RewardViewCell.xib */; };
 		7A9F4E65254171DB00A7722D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F4E64254171DB00A7722D /* AppDelegate.swift */; };
@@ -59,7 +59,7 @@
 /* Begin PBXFileReference section */
 		7A41F462254270B100E2D301 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		7A41F46A2542710D00E2D301 /* AppEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEndpoint.swift; sourceTree = "<group>"; };
-		7A41F4722542715F00E2D301 /* AppAPIRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAPIRoutes.swift; sourceTree = "<group>"; };
+		7A41F4722542715F00E2D301 /* APIRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoutes.swift; sourceTree = "<group>"; };
 		7A41F477254274F500E2D301 /* RewardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewCell.swift; sourceTree = "<group>"; };
 		7A41F478254274F500E2D301 /* RewardViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardViewCell.xib; sourceTree = "<group>"; };
 		7A9F4E61254171DB00A7722D /* SampleApp-A.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SampleApp-A.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,7 +126,7 @@
 				7AC1FFBA2541E7200088A9B3 /* RepositoryEntities.swift */,
 				7A41F462254270B100E2D301 /* NetworkRequest.swift */,
 				7A41F46A2542710D00E2D301 /* AppEndpoint.swift */,
-				7A41F4722542715F00E2D301 /* AppAPIRoutes.swift */,
+				7A41F4722542715F00E2D301 /* APIRoutes.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -424,7 +424,7 @@
 			files = (
 				7AC1FFD02541EE660088A9B3 /* String+Extensions.swift in Sources */,
 				7A9F4EB725417E9300A7722D /* UIStoryboard+Extensions.swift in Sources */,
-				7A41F4732542715F00E2D301 /* AppAPIRoutes.swift in Sources */,
+				7A41F4732542715F00E2D301 /* APIRoutes.swift in Sources */,
 				7AC1FFCB2541EC020088A9B3 /* UserRegisterViewModel.swift in Sources */,
 				7A9F4EB225417D9B00A7722D /* UICollectionView+Extensions.swift in Sources */,
 				7AC1FF962541E1F00088A9B3 /* DashListViewController.swift in Sources */,

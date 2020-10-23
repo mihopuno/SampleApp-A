@@ -34,11 +34,21 @@ extension UIViewController {
 
 
 extension UIViewController {
-    func showAlertView(_ title: String?, _ message: String?) {
+    func showAlertView(_ title: String?, _ message: String?, handler: ((UIAlertAction) -> Void)? = nil) {
         let alertController = UIAlertController(title: title,
                                                 message: title,
                                                 preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: handler)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showNetworkError(_ error: ErrorModel, handler: ((UIAlertAction) -> Void)? = nil) {
+        let statusCode = error.statusCode == nil ? "" : " - \(error.statusCode!)"
+        let alertController = UIAlertController(title: "Error\(statusCode)",
+                                                message: error.message,
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: handler)
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
