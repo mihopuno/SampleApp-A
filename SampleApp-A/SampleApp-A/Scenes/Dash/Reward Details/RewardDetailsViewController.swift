@@ -28,6 +28,7 @@ class RewardDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureNavigationBarItem()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -46,5 +47,16 @@ class RewardDetailsViewController: UIViewController {
         rewardImageView.image = UIImage(named: "placeholder")
         rewardLabel.text = rewards.name
         rewardDescriptionLabel.text = rewards.description
+    }
+    
+    private func configureNavigationBarItem() {
+        let shareBarItem = UIBarButtonItem(barButtonSystemItem: .action,
+                                           target: self,
+                                           action: #selector(onTappedBarItem))
+        self.navigationItem.rightBarButtonItem = shareBarItem
+    }
+    
+    @objc private func onTappedBarItem() {
+        self.showAlertView("Share", "Share rewards")
     }
 }
