@@ -44,7 +44,7 @@ class RewardDetailsViewController: UIViewController {
     }
     
     private func configure() {
-        rewardImageView.image = UIImage(named: "placeholder")
+        rewardImageView.setImageWithPath(rewards.image)
         rewardLabel.text = rewards.name
         rewardDescriptionLabel.text = rewards.description
     }

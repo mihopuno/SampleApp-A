@@ -15,8 +15,7 @@ class RewardViewCell: UICollectionViewCell {
     
     func configure(_ rewardModel: RewardModel) {
         descriptionLabel.text = rewardModel.description
-        rewardImageView.image = UIImage(named: "placeholder")
-        
+        rewardImageView.setImageWithPath(rewardModel.image)
     }
     
     override func awakeFromNib() {

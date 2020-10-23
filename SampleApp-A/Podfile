@@ -1,0 +1,43 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'SampleApp-A' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+pod 'Kingfisher', '~> 5.0'
+  # Pods for SampleApp-A
+
+  target 'SampleApp-ATests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'SampleApp-AUITests' do
+    # Pods for testing
+  end
+
+end
+
+# Uncomment this line to define a global platform for your project
+platform :ios, '11.0'
+
+use_frameworks!
+
+def shared_pods
+    pod 'Kingfisher'
+    pod 'ActionSheetPicker-3.0'
+    pod 'MBProgressHUD'
+    pod 'SZFontAwesomeKit', :git => 'https://gitlab.com/jaja.digitalspaceexplorer/SZFontAwesomeKit.git', :branch => 'master'
+    pod 'RealmSwift'
+    pod 'Firebase/Core'
+    pod 'Firebase/Crashlytics'
+    pod 'IQKeyboardManagerSwift'
+    pod 'ReachabilitySwift'
+    pod 'SimpleKeychain'
+    pod 'JWTDecode'
+    pod 'FontAwesome.swift', :git => "https://gitlab.com/yusuke_dse/fontawesome.swift.git"
+    pod "Device.swift"
+    #pod 'OHHTTPStubs/Swift'
+    #pod 'Hakawai', :git => 'https://gitlab.com/jaja.digitalspaceexplorer/Hakawai.git', :branch => 'version-3.0.0.0'
+end
