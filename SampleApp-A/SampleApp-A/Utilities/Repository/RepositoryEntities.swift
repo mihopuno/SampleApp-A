@@ -28,7 +28,15 @@ class ErrorModel : Error {
 }
 
 class DataArray<T : Codable> : Codable {
-    let list: [T]
+    let list : [T]
+    enum CodingKeys : String, CodingKey {
+        case list
+    }
+
+    required init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.list = try values.decode([T].self, forKey: .list)
+    }
 }
 
 class DataObject<T : Codable> : Codable {

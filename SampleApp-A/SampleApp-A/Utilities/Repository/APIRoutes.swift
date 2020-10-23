@@ -17,9 +17,9 @@ class APIRoutes {
             )
         }
         
-        static func userLogin(_ login: UserLogin) -> AppEndpoint<LoginUserModel> {
+        static func userLogin(_ login: UserLogin) -> AppEndpoint<LoginModel> {
             return AppEndpoint(
-                resourcePath: "/v3/c15d5893-a517-4958-8aa4-dc4b997bba02",
+                resourcePath: "/v3/46a90fc7-2206-4ff5-943f-3cbc088e2fc5",
                 httpMethod: .POST,
                 paramaters : login.toParamaters()
             )
@@ -27,12 +27,18 @@ class APIRoutes {
     }
     
     class Dash {
-        static func userDashProfile() {
-            
+        static func userDashProfile() -> AppEndpoint<UserProfileModel> {
+            return AppEndpoint(
+                resourcePath: "/v3/60b67797-88dd-4a77-9e96-b34a204dab68",
+                httpMethod: .GET
+            )
         }
         
-        static func rewardList() {
-            
+        static func rewardList() -> AppEndpoint<Rewards> {
+            return AppEndpoint(
+                resourcePath: "/v3/60b67797-88dd-4a77-9e96-b34a204dab68",
+                httpMethod: .GET
+            )
         }
     }
 }

@@ -29,7 +29,7 @@ class LoginModel : Codable, NetworkResponse {
 }
 
 class LoginUserModel : Codable {
-    var id : Int
+    var id : String
     var firstName : String
     var lastName : String
     var mobile : String

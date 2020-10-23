@@ -104,12 +104,15 @@ extension LoginViewController : LoginViewDelegate {
     
     func onLoginRequestSuccess() {
         let dashViewController = DashListViewController.view()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        guard let window = appDelegate.window else {
-            return
+        if #available(iOS 13, *),
+           let window = self.sceneDelegate?.window {
+            window.rootViewController = dashViewController
+            window.makeKeyAndVisible()
+        } else {
+            guard let window = self.appDelegate.window else { return }
+            window.rootViewController = dashViewController
+            window.makeKeyAndVisible()
         }
-        window.rootViewController = dashViewController
-        window.makeKeyAndVisible()
     }
 }
 

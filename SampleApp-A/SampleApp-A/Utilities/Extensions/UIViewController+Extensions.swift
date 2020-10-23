@@ -36,7 +36,7 @@ extension UIViewController {
 extension UIViewController {
     func showAlertView(_ title: String?, _ message: String?, handler: ((UIAlertAction) -> Void)? = nil) {
         let alertController = UIAlertController(title: title,
-                                                message: title,
+                                                message: message,
                                                 preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: handler)
         alertController.addAction(okAction)
@@ -51,5 +51,34 @@ extension UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default, handler: handler)
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension UIViewController {
+    var appDelegate: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
+    var sceneDelegate: SceneDelegate? {
+        if #available(iOS 13.0, *) {
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                  let delegate = windowScene.delegate as? SceneDelegate else { return nil }
+            return delegate
+        } else {
+            return nil
+        }
+    }
+}
+
+extension UIViewController {
+    var window: UIWindow? {
+        if #available(iOS 13, *) {
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                let delegate = windowScene.delegate as? SceneDelegate, let window = delegate.window else { return nil }
+                   return window
+        }
+        
+        guard let delegate = UIApplication.shared.delegate as? AppDelegate, let window = delegate.window else { return nil }
+        return window
     }
 }

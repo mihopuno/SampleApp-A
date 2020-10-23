@@ -13,8 +13,8 @@ class RewardViewCell: UICollectionViewCell {
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var viewContainer: UIView!
     
-    func configure(_ description: String, _ path: String) {
-        descriptionLabel.text = description
+    func configure(_ rewardModel: RewardModel) {
+        descriptionLabel.text = rewardModel.description
     }
     
     override func awakeFromNib() {

@@ -28,10 +28,14 @@ class UserProfileModel : Codable, NetworkResponse {
 }
 
 class UserModel : Codable {
-    var id : Int
+    var id : String
     var firstName : String
     var lastName : String
     var mobile : String
     var isVerified : Bool
     var referralCode : String
+    
+    var fullName : String {
+        return firstName + " " + lastName
+    }
 }
