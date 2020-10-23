@@ -18,13 +18,18 @@ class DashListViewController: UIViewController {
     @IBOutlet weak var mobileNumberLabel: UILabel!
     @IBOutlet weak var referalCodeLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var collectionFlowLayout: UICollectionViewFlowLayout!
+    
+    private var detailsViewController : RewardDetailsViewController?
+    
     private lazy var viewModel : DashViewModel = { ()
         return DashViewModel(self)
     }()
     
-    class func view() -> UIViewController {
+    class func view() -> UINavigationController {
         let viewController = DashListViewController.instantiate(fromStoryboard: .Dash)
-        return viewController
+        let navigationController = UINavigationController(rootViewController: viewController)
+        return navigationController
     }
     
     override func viewDidLoad() {
@@ -33,8 +38,24 @@ class DashListViewController: UIViewController {
         configureViews()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     private func configureViews() {
         collectionView.register(nib: RewardViewCell.self)
+        collectionView.delegate = self
+        let width = collectionView.frame.width - 64
+        let height = collectionView.frame.height / 3
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: -8)
+        layout.itemSize = CGSize(width: width, height: height)
+        layout.minimumInteritemSpacing = 1
+        layout.minimumLineSpacing = 1
+        collectionView.collectionViewLayout = layout
+        collectionView.layoutIfNeeded()
         viewModel.dashProfile()
         viewModel.rewardsList()
     }
@@ -62,5 +83,17 @@ extension DashListViewController : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RewardViewCell", for: indexPath) as! RewardViewCell
         cell.configure(viewModel.getReward(indexPath.row))
         return cell
+    }
+}
+
+extension DashListViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let rewardModel = viewModel.getReward(indexPath.row)
+        if detailsViewController == nil {
+            detailsViewController = RewardDetailsViewController.view(rewardModel)
+        } else {
+            detailsViewController?.updateReward(rewardModel)
+        }
+        self.navigationController?.pushViewController(detailsViewController!, animated: true)
     }
 }

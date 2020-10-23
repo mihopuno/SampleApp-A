@@ -13,10 +13,38 @@ class RewardDetailsViewController: UIViewController {
     @IBOutlet private weak var rewardLabel: UILabel!
     @IBOutlet private weak var rewardDescriptionLabel: UILabel!
     
+    private var rewards : RewardModel!
+    
+    class func view(_ reward: RewardModel) -> RewardDetailsViewController {
+        let view = RewardDetailsViewController.instantiate(fromStoryboard: .Dash)
+        view.rewards = reward
+        return view
+    }
+    
+    func updateReward(_ reward: RewardModel) {
+        self.rewards = reward
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
-    
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+     
+        configure()
+    }
+    
+    private func configure() {
+        rewardImageView.image = UIImage(named: "placeholder")
+        rewardLabel.text = rewards.name
+        rewardDescriptionLabel.text = rewards.description
+    }
 }

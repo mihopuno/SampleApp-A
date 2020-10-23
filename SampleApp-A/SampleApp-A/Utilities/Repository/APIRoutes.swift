@@ -36,7 +36,7 @@ class APIRoutes {
         
         static func rewardList() -> AppEndpoint<Rewards> {
             return AppEndpoint(
-                resourcePath: "/v3/60b67797-88dd-4a77-9e96-b34a204dab68",
+                resourcePath: "/v3/c16a8dde-82b4-40f4-971d-d72993390d74",
                 httpMethod: .GET
             )
         }

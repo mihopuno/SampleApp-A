@@ -28,7 +28,7 @@ class ErrorModel : Error {
 }
 
 class DataArray<T : Codable> : Codable {
-    let list : [T]
+    var list : [T]
     enum CodingKeys : String, CodingKey {
         case list
     }

@@ -15,13 +15,16 @@ class RewardViewCell: UICollectionViewCell {
     
     func configure(_ rewardModel: RewardModel) {
         descriptionLabel.text = rewardModel.description
+        rewardImageView.image = UIImage(named: "placeholder")
+        
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-     
+        
         viewContainer.addCornerRadius(5)
         viewContainer.elevate(elevation: 3)
+        viewContainer.layoutIfNeeded()
     }
     
     override func prepareForReuse() {

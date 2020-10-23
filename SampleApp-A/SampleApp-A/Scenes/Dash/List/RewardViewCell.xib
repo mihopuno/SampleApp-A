@@ -21,14 +21,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q3h-rh-ABo">
                         <rect key="frame" x="8" y="8" width="325" height="199"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rM1-lj-vJy">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rM1-lj-vJy">
                                 <rect key="frame" x="0.0" y="0.0" width="325" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="MoL-3S-z46"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Lc-BH-VGK">
-                                <rect key="frame" x="4" y="158" width="317" height="33"/>
+                                <rect key="frame" x="16" y="158" width="293" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -36,13 +36,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8Lc-BH-VGK" firstAttribute="leading" secondItem="Q3h-rh-ABo" secondAttribute="leading" constant="4" id="4gH-1f-8h1"/>
+                            <constraint firstItem="8Lc-BH-VGK" firstAttribute="leading" secondItem="Q3h-rh-ABo" secondAttribute="leading" constant="16" id="4gH-1f-8h1"/>
                             <constraint firstAttribute="trailing" secondItem="rM1-lj-vJy" secondAttribute="trailing" id="I3o-mp-JLu"/>
                             <constraint firstItem="rM1-lj-vJy" firstAttribute="top" secondItem="Q3h-rh-ABo" secondAttribute="top" id="SJ9-TF-p9l"/>
                             <constraint firstItem="8Lc-BH-VGK" firstAttribute="top" secondItem="rM1-lj-vJy" secondAttribute="bottom" constant="8" symbolic="YES" id="SQP-xZ-22g"/>
                             <constraint firstItem="rM1-lj-vJy" firstAttribute="leading" secondItem="Q3h-rh-ABo" secondAttribute="leading" id="Syx-zp-9Fy"/>
                             <constraint firstAttribute="bottom" secondItem="8Lc-BH-VGK" secondAttribute="bottom" constant="8" id="W4R-ut-XPE"/>
-                            <constraint firstAttribute="trailing" secondItem="8Lc-BH-VGK" secondAttribute="trailing" constant="4" id="jUT-iW-inT"/>
+                            <constraint firstAttribute="trailing" secondItem="8Lc-BH-VGK" secondAttribute="trailing" constant="16" id="jUT-iW-inT"/>
                         </constraints>
                     </view>
                 </subviews>

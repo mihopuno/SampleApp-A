@@ -46,6 +46,9 @@ class LoginViewController: UIViewController {
         mobileNumberTextField.keyboardType = .namePhonePad
         mobileNumberTextField.delegate = self
         mobileNumberTextField.returnKeyType = .done
+        
+        mpinTextField.text = "1234"
+        mobileNumberTextField.text = "09171370841"
     }
     
     private func setupNotificationObservers() {
